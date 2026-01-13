@@ -1,0 +1,60 @@
+.avatar {
+  position: relative;
+  display: inline-block;
+}
+
+.image {
+  border-radius: 50%;
+  background-color: #e1e8ed;
+  object-fit: cover;
+}
+
+.small .image {
+  width: 40px;
+  height: 40px;
+}
+
+.medium .image {
+  width: 80px;
+  height: 80px;
+}
+
+.large .image {
+  width: 120px;
+  height: 120px;
+}
+
+.uploadButton {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #1da1f2;
+  color: white;
+  border: 3px solid white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.uploadButton:hover:not(:disabled) {
+  background-color: #1a91da;
+}
+
+.uploadButton:disabled {
+  background-color: #cfd9de;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #e0245e;
+  font-size: 12px;
+  margin-top: 4px;
+  text-align: center;
+}

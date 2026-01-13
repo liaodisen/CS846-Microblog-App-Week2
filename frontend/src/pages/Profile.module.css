@@ -1,0 +1,138 @@
+.profileContainer {
+  width: 70%;
+  max-width: 900px;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.profileHeader {
+  padding: 16px;
+  border-bottom: 1px solid #e1e8ed;
+  flex-shrink: 0;
+  background-color: #fff;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.profileInfo h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: #0f1419;
+}
+
+.username {
+  color: #536471;
+  font-size: 15px;
+  margin: 4px 0 12px 0;
+}
+
+.bio {
+  color: #0f1419;
+  font-size: 15px;
+  margin: 12px 0;
+  line-height: 1.5;
+}
+
+.editBtn {
+  background: #fff;
+  color: #1da1f2;
+  border: 1px solid #1da1f2;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s;
+  margin-top: 12px;
+}
+
+.editBtn:hover {
+  background: rgba(29, 161, 242, 0.1);
+}
+
+.editForm {
+  padding: 16px;
+  border-bottom: 1px solid #e1e8ed;
+}
+
+.editForm textarea {
+  width: 100%;
+  min-height: 100px;
+  border: 1px solid #cfd9de;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 15px;
+  font-family: inherit;
+  resize: vertical;
+  color: #0f1419;
+  margin-bottom: 12px;
+}
+
+.editForm textarea:focus {
+  outline: none;
+  border-color: #1da1f2;
+  box-shadow: 0 0 0 3px rgba(29, 161, 242, 0.1);
+}
+
+.editFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.charCount {
+  color: #536471;
+  font-size: 13px;
+}
+
+.saveBtn {
+  background: #1da1f2;
+  color: white;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.saveBtn:hover {
+  background: #1a91da;
+}
+
+.posts {
+  border-right: 1px solid #e1e8ed;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.posts h2 {
+  padding: 16px;
+  border-bottom: 1px solid #e1e8ed;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f1419;
+  flex-shrink: 0;
+}
+
+.emptyState {
+  padding: 32px 16px;
+  text-align: center;
+  color: #536471;
+}
+
+.loading,
+.error {
+  padding: 32px 16px;
+  text-align: center;
+  color: #536471;
+}

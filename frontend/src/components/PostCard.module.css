@@ -1,0 +1,82 @@
+.postCard {
+  border-bottom: 1px solid #e1e8ed;
+  padding: 16px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  gap: 12px;
+}
+
+.postCard:hover {
+  background-color: #f7f9fa;
+}
+
+.avatarContainer {
+  flex-shrink: 0;
+}
+
+.contentContainer {
+  flex: 1;
+  min-width: 0;
+  margin-bottom: 12px;
+  align-items: flex-start;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.displayName {
+  font-weight: 700;
+  color: #0f1419;
+  font-size: 16px;
+}
+
+.username {
+  color: #536471;
+  font-size: 13px;
+}
+
+.timestamp {
+  color: #536471;
+  font-size: 13px;
+}
+
+.content {
+  color: #0f1419;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  word-wrap: break-word;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  max-width: 425px;
+  color: #536471;
+  font-size: 13px;
+}
+
+.action {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #536471;
+  cursor: pointer;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+}
+
+.action:hover {
+  color: #1da1f2;
+}
+
+.action.liked {
+  color: #e0245e;
+}
