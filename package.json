@@ -1,0 +1,25 @@
+{
+  "name": "microblog",
+  "version": "1.0.0",
+  "description": "A Twitter-like microblogging web application",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend",
+    "shared"
+  ],
+  "scripts": {
+    "install-all": "npm install && npm install -w backend && npm install -w frontend && npm install -w shared",
+    "dev:backend": "npm run dev -w backend",
+    "dev:frontend": "npm run dev -w frontend",
+    "dev": "npm run dev:backend & npm run dev:frontend",
+    "build": "npm run build -w backend && npm run build -w frontend",
+    "test": "npm test -w backend && npm test -w frontend",
+    "test:backend": "npm test -w backend",
+    "test:frontend": "npm test -w frontend",
+    "lint": "npm run lint -w backend && npm run lint -w frontend"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

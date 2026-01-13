@@ -1,0 +1,74 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        String     @id @default(cuid())
+  email     String     @unique
+  username  String     @unique
+  displayName String
+  password  String
+  bio       String?
+  avatar    String?    @default("default") // URL or identifier for avatar
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  posts     Post[]
+  replies   Reply[]
+  likes     Like[]
+
+  @@index([createdAt])
+}
+
+model Post {
+  id        String     @id @default(cuid())
+  content   String     @db.VarChar(280)
+  userId    String
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  replies   Reply[]
+  likes     Like[]
+
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model Reply {
+  id        String     @id @default(cuid())
+  content   String     @db.VarChar(280)
+  postId    String
+  post      Post       @relation(fields: [postId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  likes     Like[]
+
+  @@index([postId])
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model Like {
+  id        String     @id @default(cuid())
+  userId    String
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  postId    String?
+  post      Post?      @relation(fields: [postId], references: [id], onDelete: Cascade)
+  replyId   String?
+  reply     Reply?     @relation(fields: [replyId], references: [id], onDelete: Cascade)
+  createdAt DateTime   @default(now())
+
+  @@unique([userId, postId, replyId])
+  @@index([userId])
+  @@index([postId])
+  @@index([replyId])
+}
